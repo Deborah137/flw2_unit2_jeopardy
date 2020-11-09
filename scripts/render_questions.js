@@ -43,7 +43,7 @@ function renderQuestions() {
         "<div class='questions-column'><div class='question-cell' data-catogory='" +
           i +
           "'>" +
-          questionValues[1] +
+          questionValues[(1, 2)] +
           "<div></div>"
       );
     }
