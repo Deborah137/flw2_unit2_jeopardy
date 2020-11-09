@@ -36,7 +36,7 @@ function renderCategories() {
   // Add code here
   for (let element of categories) {
     let categoryColumn =
-      "<div class='cateogory'><div class='cateogory-cell'>" +
+      "<div class='category'><div class='category-cell'>" +
       element +
       "</div></div>";
     // <div class='catagory'><div class='catogory-cell'> POTATO </div></div>
