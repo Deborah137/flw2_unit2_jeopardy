@@ -37,16 +37,13 @@ let questionValues = [100, 200, 300, 400, 500];
 
 function renderQuestions() {
   // Add code here
-  for (let i = 0; i < questionValues.length; i++)
-    for (let c = 0; c < numCategories; c++) {
-      $("#questions").append(
-        "<div class='questions-column'><div class='question-cell' data-catogory='" +
-          i +
-          "'>" +
-          questionValues[(1, 2)] +
-          "<div></div>"
-      );
-    }
-
-  console.log(str);
+  for (let i = 0; i < numCategories; i++) {
+    let questionHTML = "<div class='questions-column'>";
+    questionValues.forEach(function (value) {
+      console.log(value);
+      questionHTML += `<div class='question-cell' data-category='${i}''>${value}</div>`;
+    });
+    questionHTML += "</div>";
+    $("#questions").append(questionHTML);
+  }
 }
