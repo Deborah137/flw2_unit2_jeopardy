@@ -18,25 +18,16 @@
 function renderScoringButtons() {
   // Add code here
   $("#score").show();
-
+  $("#correct-button").click(function()  {
+    addToScore();
+  });
+  $("#incorrect-button").click(function() {
+    subtractFromScore();
+  });
   $("#question-modal-show-answer").click(function () {
     $("#question-modal-actions").hide();
     $("#scoring-actions").show();
   });
-
-  $("#correct-button")
-    .click(() => {
-      // Add code here
-      addToScore();
-    })
-    .show();
-
-  $("#incorrect-button")
-    .click(() => {
-      // Add code here
-      subtractFromScore();
-    })
-    .show();
 }
 
 /* TODO: Program the following:
@@ -57,16 +48,21 @@ function renderScoringButtons() {
  * BONUS 2: Move the common code from addToScore and subtractFromScore to a helper function!
  *      HINT: Compute the new score and then call the helper function.
  */
-function subtractFromScore() {
-  // Add code here
-  console.log("subtractFromScore");
-  getCurrentScore();
-}
+
 
 function addToScore() {
   // Add code here
-  console.log("addToScore");
+  let current score = getCurrentScore();
+  currentScore = currentQuestionValue + currentScore;
+  $("#current-score").html(currentScore);
 }
 
+function subtractFromScore() {
+  // Add code here
+  currentScore = getCurrentScore();
+  currentScore = currentScore - currentQuestionValue;
+  $("#current-score").html(currentScore);
+}
 //let newScore = getCurrentScore() minus currentQuestionValue;
 //<span id="current-score"> newScore</span>;
+//https://docs.google.com/document/d/1qrY2OC-6S04oOXZlYmXja7lmKBmdApR-HXJkhfd67e8/edit#
